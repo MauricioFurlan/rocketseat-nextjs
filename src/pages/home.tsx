@@ -16,8 +16,8 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-   const [session] = useSession();
-   console.log('oia', session)
+      const [ session, loading ] = useSession()
+      console.log('session', session)
   return (
       <ChallengesProvider level={props.level} currentExperience={props.currentExperience} challengesCompleted={props.challengesCompleted}>
        <div className={styles.container}>
