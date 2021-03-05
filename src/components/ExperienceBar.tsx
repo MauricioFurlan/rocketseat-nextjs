@@ -7,7 +7,6 @@ export function ExperienceBar() {
     const {currentExperience, experienceToNexLevel} = useContext(ChallengesContext)
     const percentToNextLevel = Math.round(currentExperience * 100) / experienceToNexLevel
     function logout() {
-        console.log('oi')
         signOut();
     }
     return (
