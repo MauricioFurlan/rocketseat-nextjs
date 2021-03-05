@@ -28,3 +28,10 @@ span.currentExperience {
     transform: translate(-50%);
 
 }
+
+.experienceBar button {
+    margin: 0 1.0rem;
+    position: relative;
+    background: transparent;
+    border: 0;
+}

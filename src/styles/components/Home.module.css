@@ -1,3 +1,6 @@
+.html {
+    background: var(--white);
+}
 .container {
     height: 100vh;
     max-width: 992px;
@@ -11,7 +14,7 @@
 .container section {
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
     gap: 6.25rem;
     align-content: center;
 }

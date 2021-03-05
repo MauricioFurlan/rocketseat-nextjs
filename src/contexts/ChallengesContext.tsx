@@ -43,7 +43,6 @@ export function ChallengesProvider({children, ...rest}: ChallengesProviderProps)
     useEffect(() => {
         Notification.requestPermission();
     }, [])
-
     useEffect(() => {
         Cookie.set('level', String(level))
         Cookie.set('currentExperience', String(currentExperience))

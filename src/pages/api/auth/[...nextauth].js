@@ -1,14 +1,32 @@
 import NextAuth from 'next-auth'
 import Providers from 'next-auth/providers'
 
+const providers = [
+    Providers.GitHub({
+        clientId: process.env.GITHUB_CLIENT_ID,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET
+    }),
+    Providers.Facebook({
+        clientId: process.env.FACEBOOK_ID,
+        clientSecret: process.env.FACEBOOK_SECRET
+        })
+]
+
+const callbacks = {}
+// callbacks.signIn = async function signIn(user, account, metadata) {
+//     const emailRes = await fetch('https://api.github.com/user/emails', {
+//         headers: {
+//             'Authorization': `token ${account.accessToken}`
+//         }
+//     })
+//     const emails = await emailRes.json()
+//     const primaryEmail = emails.find(e => e.primary).email;
+
+//     user.email = primaryEmail;
+// }
 const options = {
-    providers: [
-        // OAuth authentication providers...
-        Providers.GitHub({
-            clientId: 'ecc3c41f15c2ffd2d0b1',
-            clientSecret: '8eb0216ef9440e65519c77ef09a804f9a017dcb4'
-        }),
-    ],
+    providers,
+    callbacks
 }
-console.log('opa', options)
+
 export default (req, res) => NextAuth(req, res, options)
